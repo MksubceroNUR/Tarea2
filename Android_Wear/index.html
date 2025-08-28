@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- HTML Meta Tags -->
+    <title>Instalar OTA en Android Wear</title>
+    <meta name="author" content="Carlos Enrique Rojas Mendoza">
+    <meta name="description" content="Guía para instalar la actualización OTA en Android Wear">
+    <meta name="theme-color" content="#08a5df">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://tusitio.com/androidwear-ota">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Instalar OTA en Android Wear">
+    <meta property="og:description" content="Pasos para actualizar tu Android Wear manualmente">
+    <meta property="og:image" content="imagenandroid.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="tusitio.com">
+    <meta property="twitter:url" content="https://tusitio.com/androidwear-ota">
+    <meta name="twitter:title" content="Instalar OTA en Android Wear">
+    <meta name="twitter:description" content="Guía para instalar la actualización OTA en Android Wear">
+    <meta name="twitter:image" content="imagenandroid.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+
+        <!-- Título -->
+        <h1 class="text-center mb-4">Instalar OTA en Android Wear</h1>
+
+        <!-- Autor -->
+        <p class="text-center font-italic">Autor: Carlos Enrique Rojas Mendoza</p>
+
+        <!-- Texto inicial -->
+        <div class="mb-4">
+            <h3>Introducción</h3>
+            <p>
+                Instala ya la OTA en tu Android Wear.  
+                La nueva versión de Android Wear que trae a los relojes las pantallas de reloj interactivas, 
+                el modo Together, el Traductor de Google y el soporte Wi-Fi al LG G Watch R ya está llegando 
+                vía OTA a los relojes durante estos días.
+            </p>
+        </div>
+
+        <!-- Imagen -->
+        <div class="text-center mb-4">
+            <img src="imagenandroid.png" alt="Android Wear" class="img-fluid rounded shadow">
+        </div>
+
+        <!-- Texto con pasos -->
+        <div class="mb-4">
+            <h3>Actualización manual</h3>
+            <p>
+                Si no quieres esperar para disfrutar de la última versión de Android Wear puedes actualizar 
+                manualmente la OTA. De momento la OTA está disponible para descargar para los LG G Watch, 
+                LG G Watch R, LG Watch Urbane y Sony SmartWatch 3.
+            </p>
+
+            <h5>Instalar manualmente su actualización OTA</h5>
+            <ul>
+                <li>LG G Watch: LCA43 desde LDZ22D</li>
+                <li>LG G Watch R: LCA44B desde LDZ22D</li>
+                <li>LG Watch Urbane: LCA44B desde LDZ22D</li>
+                <li>Samsung Gear Live: No disponible</li>
+                <li>Sony SmartWatch 3: LCA43 desde LDZ22D</li>
+                <li>Asus ZenWatch: No disponible</li>
+            </ul>
+
+            <p>Para actualizar manualmente necesitamos tener instalado el SDK de Android y seguir los siguientes pasos:</p>
+
+            <ol>
+                <li>Descargar el archivo que nos corresponda de la actualización respecto a nuestro dispositivo y versión actual.</li>
+                <li>Guardar el ZIP en la carpeta <strong>Platform-tools</strong> del Android SDK.</li>
+                <li>Activar las opciones de desarrollo en Android Wear: <em>Ajustes &gt; Acerca de</em> y pulsar siete veces sobre "número de compilación".</li>
+                <li>Activar la Depuración ADB: <em>Ajustes &gt; Opciones de desarrollo &gt; Depuración ADB &gt; Sí</em>.</li>
+                <li>Conectar el reloj al ordenador por USB o por Bluetooth si se activa la opción Depurar por Bluetooth.</li>
+                <li>Abrir una ventana de comandos en el ordenador y dentro de <em>Platform-tools</em> escribir: <code>adb reboot-bootloader</code>. Aceptar la depuración en el reloj.</li>
+                <li>Entrar al Recovery Mode tocando una de las teclas virtuales que aparecen en el reloj.</li>
+                <li>Cuando aparezca un icono de Android con una exclamación, tocar la pantalla.</li>
+                <li>Seleccionar <em>apply update from adb</em> deslizando el dedo hacia abajo.</li>
+                <li>Desde el ordenador ejecutar: <code>adb sideload nombre_del_archivo.zip</code>.  
+                    Ejemplo:  
+                    <code>adb sideload 20ffa54cc8c2d942511dc6b0cbc55071c7f422cc.signed-lenok-LCA44B-from-LDZ22D.20ffa54c.zip</code>
+                </li>
+                <li>Una vez instalada la actualización, reiniciar el dispositivo seleccionando la opción correspondiente. El proceso respetará tus datos.</li>
+            </ol>
+        </div>
+
+    </div>
+</body>
+</html>
